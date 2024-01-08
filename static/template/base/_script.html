@@ -1,0 +1,12 @@
+{% if script is defined and script is not none %}
+        {% if script is iterable and script != arr %}
+            {% for src in script %}
+                <script src="{{ url_for('static', filename='js/'+src+'.js') }}"></script>
+            {% endfor %}
+        {% else %}
+            <script src="{{ url_for('static', filename='js/'+script+'.js') }}"></script>
+        {% endif %}
+    {% else %}
+        <!-- Handle the case where script is null or undefined -->
+        <!-- You may want to provide an error message or a default stylesheet script -->
+    {% endif %}

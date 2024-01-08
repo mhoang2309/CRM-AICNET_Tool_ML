@@ -1,0 +1,13 @@
+<title>{{title}}</title>
+{% if link is defined and link is not none %}
+        {% if link is iterable and link != arr %}
+            {% for stylesheet in link %}
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/'+stylesheet+'.css') }}">
+            {% endfor %}
+        {% else %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/'+link+'.css') }}">
+        {% endif %}
+    {% else %}
+        <!-- Handle the case where link is null or undefined -->
+        <!-- You may want to provide an error message or a default stylesheet link -->
+    {% endif %}

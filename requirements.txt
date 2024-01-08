@@ -1,0 +1,6 @@
+Flask
+pytube
+moviepy
+tinydb
+PyJWT
+pydub
